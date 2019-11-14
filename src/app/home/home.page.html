@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Accueil
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+        <div >
+
+        </div>
+      <ion-card-header>
+      
+        <ion-card-title text-center  > {{Classroom.CLASSNAME}} <!--<sup class="exposant">ème</sup>-->   </ion-card-title>
+        <ion-card-subtitle text-center>{{subject.SUBJECTNAME}} </ion-card-subtitle>
+      </ion-card-header>
+    
+    </ion-card>
+    <ion-grid>
+        <ion-row>
+          
+          <ion-col>
+            <div (click)="toDrawpage()"  class="outer">
+                <div class="inner">
+                    <img src="/assets/Tirage.png" alt="" />
+                </div>
+                <br/>
+                <ion-label style="white-space:nowrap;" text-center >Tirage</ion-label>
+            </div>
+          </ion-col>
+          <ion-col>
+              <div  (click)="toGroupCreationPage()" class="outer">
+                  <div class="inner" >
+                      <img src="/assets/Groupe.png" alt=""  />
+                 
+                  </div>
+                  <br/>
+                  <ion-label text-center >Groupement </ion-label>
+              </div>
+            </ion-col>
+          <ion-col>
+              <div  (click)="toGroupListPage()" class="outer">
+                <div class="inner">
+                    <img src="/assets/list.png" alt="" />
+                </div>
+                <br/>
+                  <ion-label text-center >Groupe</ion-label>
+               </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      
+  
+</ion-content>

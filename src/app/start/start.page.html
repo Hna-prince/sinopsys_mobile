@@ -1,0 +1,48 @@
+
+
+
+
+  
+  <ion-content>
+     
+          <img src="/assets/logo.png" alt="" />
+        
+           <!-- <ion-title text-center >Nom applicaton</ion-title>-->
+         
+      <ion-card >
+         
+          <ion-card-content >
+             
+              <ion-item>
+                  <ion-icon name="people" color = "white"></ion-icon>
+                  <ion-label>Classe</ion-label>
+                  <ion-select [(ngModel)]="classroom"  (ionChange)="chooseClassroom($event)" >
+                    <ion-select-option *ngFor="let classroom of classrooms" [value]="classroom"  >{{classroom.CLASSNAME}}</ion-select-option>
+                
+                  </ion-select>
+                </ion-item>
+         
+          </ion-card-content>
+        </ion-card>
+        <ion-card *ngIf="classSelected" >
+            <ion-card-content>
+             
+                  <ion-item>
+                      <ion-icon name="book" color = "white"></ion-icon>
+                      <ion-label>Matière</ion-label>
+                      <ion-select [(ngModel)]="subject" >
+                        <ion-select-option *ngFor="let subject of subjects" [value]="subject">{{subject.SUBJECTNAME}}</ion-select-option>
+                        
+                      </ion-select>
+                    </ion-item>
+             
+            </ion-card-content>
+          </ion-card>
+
+          <div style="margin-top: 20px;">
+
+            <ion-button strong  expand="block" (click)="valid()" >Valider</ion-button>
+        
+        </div>
+         
+   </ion-content>

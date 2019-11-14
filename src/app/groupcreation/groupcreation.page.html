@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button color="danger"></ion-back-button>
+        </ion-buttons>
+    <ion-title>Création de groupe</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true">
+
+    <div text-center class="divtitle">
+        
+        <h1 class="titleGroupDetail">
+            Nombre d'élèves par groupe :
+        </h1>
+      </div>
+
+    <ion-grid>
+        <ion-row>
+          
+          <ion-col>
+            <div (click)="chooseNumberStudentPerGroup(2)">
+                <div >
+                    <img src="/assets/2.png" alt="" />
+                </div>
+            </div>
+          </ion-col>
+          <ion-col>
+              <div (click)="chooseNumberStudentPerGroup(3)">
+                  <div  >
+                      <img src="/assets/3.png" alt=""  />
+                 
+                  </div>
+              </div>
+            </ion-col>
+          <ion-col>
+              <div  (click)="chooseNumberStudentPerGroup(4)" >
+                <div >
+                    <img src="/assets/4.png" alt="" />
+                </div>
+               </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              <div  (click)="chooseNumberStudentPerGroup(5)" >
+                <div >
+                    <img src="/assets/5.png" alt="" />
+                </div>
+               </div>
+          </ion-col>
+          <ion-col>
+              <div  (click)="chooseNumberStudentPerGroup(6)">
+                <div >
+                    <img src="/assets/6.png" alt="" />
+                </div>
+               </div>
+          </ion-col>
+          <ion-col>
+              <div >
+                <div  (click)="presentPrompt()">
+                    <img src="/assets/+.png" alt="" />
+                </div>
+               </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-card>
+            <div >
+    
+            </div>
+          <ion-card-header>
+          
+            <ion-card-subtitle text-center  > {{studentNumberChoosed}}  nombre d'élèves par groupe<!--<sup class="exposant">ème</sup>-->   </ion-card-subtitle>
+            
+          </ion-card-header>
+        
+        </ion-card>
+
+      <ion-list>
+            <ion-radio-group  [(ngModel)]="type" >
+              <ion-item>
+                <ion-label>Tirage équilibré</ion-label>
+                <ion-radio slot="start" [value]="0" checked></ion-radio>
+              </ion-item>
+          
+              <ion-item>
+                <ion-label>Tirage aléatoire</ion-label>
+                <ion-radio slot="start" [value]="1"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+          <div style="margin-left: 10px; margin-right: 10px">
+
+                <ion-button (click)="getStudentGrouped()" expand="block">Grouper les élèves</ion-button>
+            
+            </div>
+            
+
+
+
+            <ion-list *ngIf=" GroupList!=null && GroupList.length!=0" >
+                    <ion-list-header>
+                            <ion-title>Résultats</ion-title>
+                          </ion-list-header>
+                    <ion-item (click)="detailGroup(group)" detail-push  *ngFor="let group of GroupList let i = index">
+                      <ion-icon name="contacts" slot="start"></ion-icon>
+                      Groupe {{i+1}}
+                      <div class="item-note" slot="end">
+                        {{group.length}} élèves
+                        <ion-icon name="arrow-forward" item-end></ion-icon>
+                      </div>
+                      
+                    </ion-item>
+                   
+                  </ion-list>
+
+</ion-content>

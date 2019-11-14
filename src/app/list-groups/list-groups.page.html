@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button color="danger"></ion-back-button>
+        </ion-buttons>
+    <ion-title>liste des groupes actuels</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item detail-push (click)="showGroupDetail()">
+      <ion-icon name="contacts" slot="start"></ion-icon>
+      Groupe 1 
+      <div class="item-note" slot="end">
+        3 élèves
+        <ion-icon name="arrow-forward" item-end></ion-icon>
+      </div>
+      
+    </ion-item>
+    <ion-item detail-push>
+      <ion-icon name="contacts" slot="start"></ion-icon>
+      Groupe 2
+      <div class="item-note" slot="end">
+        3 élèves
+        <ion-icon name="arrow-forward" item-end></ion-icon>
+      </div>
+      
+    </ion-item>
+    <ion-item detail-push>
+      <ion-icon name="contacts" slot="start"></ion-icon>
+      Groupe 3
+      <div class="item-note" slot="end">
+        3 élèves
+        <ion-icon name="arrow-forward" item-end></ion-icon>
+      </div>
+      
+    </ion-item>
+  
+  <ion-item detail-push>
+      <ion-icon name="contacts" slot="start"></ion-icon>
+      Groupe 4
+      <div class="item-note" slot="end">
+        1 élèves
+        <ion-icon name="arrow-forward" item-end></ion-icon>
+      </div>
+      
+    </ion-item>
+  </ion-list>
+  <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->
+</ion-content>

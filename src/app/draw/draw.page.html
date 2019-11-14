@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button color="danger"></ion-back-button>
+        </ion-buttons>
+    <ion-title>Tirage pour la participation </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card class="welcome-card">
+        
+     
+   
+      <ion-card-content>
+        <p>Saisissez le nombre d'étudiants aléatoires pour le résultat</p>
+        
+
+
+          
+          
+
+        <div >
+            <ion-item>
+                <ion-label class="inputmin"  position="float">Nombre d'étudiants :</ion-label>
+                <ion-input  [(ngModel)]="resultNumber"  [value]=1></ion-input>
+            </ion-item>
+          </div>
+          
+        <ion-list>
+            <ion-radio-group  [(ngModel)]="typedraw" >
+              <ion-item>
+                <ion-label>Tirage par Priorité</ion-label>
+                <ion-radio slot="start" [value]="0" checked></ion-radio>
+              </ion-item>
+          
+              <ion-item>
+                <ion-label>Tirage Aléatoire</ion-label>
+                <ion-radio slot="start" [value]="1"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+
+          <div style="margin-top: 20px;">
+
+              <ion-button (click)="startDraw()" expand="block">Commencer</ion-button>
+          
+          </div>
+     
+       
+      </ion-card-content>
+    </ion-card>
+ 
+
+
+  
+    <ion-list lines="none" *ngIf="studentListChosen !=null && studentListChosen.length > 0 && typedraw==1">
+        <ion-list-header>
+          <ion-title>Résultats</ion-title>
+        </ion-list-header>
+        <ion-item *ngFor="let studentChosen of studentListChosen let i = index" >
+          
+          <ion-icon slot="start" color="medium" name="person"></ion-icon>
+          <ion-label  >{{ i+1 }} - {{ studentChosen.FIRSTNAME }} {{studentChosen.LASTNAME}}</ion-label>
+          <ion-button *ngIf="interrogationStateList[i] == 2" (click)="presentActionSheet(studentChosen.IDSTUDENT,i)" color="primary"> <ion-icon name="text"></ion-icon></ion-button>
+          <ion-badge *ngIf="interrogationStateList[i] == 0" color="success">  <ion-icon name="checkmark"></ion-icon></ion-badge>
+            <ion-badge *ngIf="interrogationStateList[i] == 1" color="danger"> <ion-icon name="close"></ion-icon></ion-badge>
+        </ion-item>
+       
+      
+      </ion-list>
+
+      <ion-list lines="none" *ngIf="studentListChosen !=null && studentListChosen.length > 0 && typedraw==0">
+          <ion-list-header>
+            <ion-title>Résultats</ion-title>
+          </ion-list-header>
+          <ion-item *ngFor="let studentChosen of studentListChosen let i = index" >
+            
+            <ion-icon slot="start" color="medium" name="person"></ion-icon>
+            <ion-label  >{{ i+1 }} - {{ studentChosen.FIRSTNAME }} {{studentChosen.LASTNAME}}</ion-label>
+            <ion-button *ngIf="interrogationStateList[i] == 2" (click)="presentActionSheet(studentChosen.idstudent,i)" color="primary"> <ion-icon name="text"></ion-icon></ion-button>
+            <ion-badge *ngIf="interrogationStateList[i] == 0" color="success">  <ion-icon name="checkmark"></ion-icon></ion-badge>
+              <ion-badge *ngIf="interrogationStateList[i] == 1" color="danger"> <ion-icon name="close"></ion-icon></ion-badge>
+          </ion-item>
+         
+        
+        </ion-list>
+   
+</ion-content>

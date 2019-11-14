@@ -1,0 +1,35 @@
+
+ion-content{
+    --background: #388bf7;
+}
+  ion-card{
+    --background: #fff;
+  }
+  ion-item{
+    --background: #fff;
+    --color: #388bf7;
+  }
+  ion-card-header{
+    --color: #388bf7;
+  }
+  ion-icon {
+      margin-right: 10px
+  }
+  ion-title{
+    --color: #fff;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 10%;
+    margin-bottom: 10%
+  }
+  img{
+    display: block;
+    margin: 0 auto;
+    }
+
+    ion-button {
+      --background: #24417D;
+      margin-left: 3%;
+       margin-right: 3%;
+ 
+    }

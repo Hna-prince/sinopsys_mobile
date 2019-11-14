@@ -1,0 +1,40 @@
+.welcome-card img {
+  max-height: 35vh;
+  overflow: hidden;
+
+}
+ion-card{
+  --background: #388bf7;
+  --color: #fff;
+}
+.outer{
+   text-align: center;
+}
+.inner{
+   width:50%; height:50%;  
+    display: inline-block;
+}
+ion-grid{
+  padding-top: 10%;
+}
+ion-label{
+  
+  font-size: 0.8rem;
+}
+.background-image {
+  background: url('/assets/shapes.svg') no-repeat 100% 100%;
+}
+ion-card-title{
+  font-size: 7rem;
+
+  --color: #fff;
+}
+ion-card-subtitle{
+  font-size: 2rem;
+  --color: #fff;
+}
+
+
+.exposant{
+  font-size: 1rem;
+}
